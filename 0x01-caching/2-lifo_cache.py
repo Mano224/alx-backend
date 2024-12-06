@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""First-In First-Out caching module.
+"""Last-In First-Out caching module.
 """
 from collections import OrderedDict
 
@@ -8,7 +8,7 @@ from base_caching import BaseCaching
 
 class FIFOCache(BaseCaching):
     """Represents an object that allows storing and
-    retrieving items from a dictionary with a FIFO
+    retrieving items from a dictionary with a LIFO
     removal mechanism when the limit is reached.
     """
     def __init__(self):
