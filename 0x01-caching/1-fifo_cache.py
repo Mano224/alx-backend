@@ -5,7 +5,9 @@ from collections import OrderedDict
 from base_caching import BaseCaching
 
 class FIFOCache(BaseCaching):
-    """First-In First-Out caching module.
+    """Represents an object that allows storing and
+    retrieving items from a dictionary with a FIFO
+    removal mechanism when the limit is reached.
     """
     def __init__(self):
         super().__init__()
@@ -20,7 +22,7 @@ class FIFOCache(BaseCaching):
 
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
              
-            first_key = self.cache_data.popitem(last=False)
+            first_key,_ = self.cache_data.popitem(last=False)
             print("DISCARD:", first_key)
 
     def get(self, key):
